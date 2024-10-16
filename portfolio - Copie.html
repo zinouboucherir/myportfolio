@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boucherir Mohamed Zineddine - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+         /* Ajoutez ces styles au bloc de style existant ou modifiez les styles existants */
+       /* Contact Section Styling */
+       :root {
+    --primary-color: #2c3e50;
+    --secondary-color: rgba(236, 240, 241, 0.7);
+    --accent-color: #3498db;
+    --text-color: #34495e;
+    --card-bg: rgba(255, 255, 255, 0.8);
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    background-color: transparent;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+section {
+    padding: 100px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-color);
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.8em;
+    margin-top: 0;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.profile-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 40px;
+    display: block;
+    border: 5px solid var(--accent-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.card-content {
+    flex-grow: 1;
+}
+
+.skills-list, .experience-list, .project-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills-list li, .experience-list li, .project-list li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.skills-list li:before, .experience-list li:before, .project-list li:before {
+    content: '▹';
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--accent-color);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.timeline-item:before {
+    content: '';
+    position: absolute;
+    left: -34px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+}
+
+.about-section {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.keyword {
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.emoji {
+    font-size: 1.2em;
+    margin-right: 5px;
+}
+
+.skills-container {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 40px 0;
+}
+
+.skills-scroll {
+    display: inline-block;
+    animation: scroll 60s linear infinite;
+}
+
+.skill-item {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--card-bg);
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.skill-item i {
+    font-size: 24px;
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    z-index: 2;
+}
+
+#animation-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-section {
+    padding: 80px 0;
+    background-color: var(--secondary-color);
+}
+
+.contact-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 40px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+.contact-item i {
+    font-size: 1.5em;
+    color: var(--accent-color);
+    margin-right: 10px;
+}
+
+.languages-section {
+    width: 100vw;
+    background-color: var(--secondary-color);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.languages-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.languages-card {
+    background-color: var(--card-bg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 40px;
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.languages-info {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.languages-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    color: var(--text-color);
+}
+
+.languages-item i {
+    font-size: 1.5em;
+    color: var(--accent-color);
+    margin-right: 10px;
+}
+
+@media (max-width: 1024px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .languages-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about-section {
+        flex-direction: column;
+    }
+}
+    </style>
+</head>
+<body>
+   
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home"><i class="fas fa-home"></i> Accueil</a></li>
+                <li><a href="#about"><i class="fas fa-user"></i> À Propos</a></li>
+                <li><a href="#skills"><i class="fas fa-cogs"></i> Compétences</a></li>
+                <li><a href="#experience"><i class="fas fa-briefcase"></i> Expérience</a></li>
+                <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projets</a></li>
+                <li><a href="#education"><i class="fas fa-graduation-cap"></i> Formation</a></li>
+                <li><a href="#languages"><i class="fas fa-language"></i> Langues</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <canvas id="animation-canvas"></canvas>
+    <section id="home">
+        <div class="container">
+            <img src="./WhatsApp Image 2024-04-11 at 13.34.52.png" alt="Boucherir Mohamed Zineddine" class="profile-photo">
+            <h1>Boucherir Mohamed Zineddine</h1>
+            <p style="text-align: center;">Ingénieur Data Science | Expert en Machine Learning et NLP</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>À Propos de Moi</h2>
+            <div class="about-section">
+                <div class="about-text">
+                    <p>Ingénieur de Données passionné par le vaste monde des données, je suis compétent en analyse, traitement et gestion de données. Mon appétit insatiable pour les nouvelles technologies me pousse à relever les défis les plus complexes afin de concevoir des solutions novatrices axées sur la donnée.</p>
+                    <p>Ma rigueur et ma capacité à travailler en équipe font de moi un acteur clé dans l'univers en constante évolution de l'ingénierie des données.</p>
+                </div>
+                <div class="about-image">
+                    <img src="./Data-Science-Abuja-What-is-data-science.png" alt="Data Science Illustration">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Compétences</h2>
+            <div class="skills-container">
+                <div class="skills-scroll">
+                    <div class="skill-item"><i class="fab fa-python"></i>Python</div>
+                    <div class="skill-item"><i class="fab fa-r-project"></i>R</div>
+                    <div class="skill-item"><i class="fab fa-java"></i>Java</div>
+                    <div class="skill-item"><i class="fab fa-js-square"></i>JavaScript</div>
+                    <div class="skill-item"><i class="fas fa-database"></i>SQL</div>
+                    <div class="skill-item"><i class="fab fa-docker"></i>Docker</div>
+                    <div class="skill-item"><i class="fab fa-node-js"></i>Node.js</div>
+                    <div class="skill-item"><i class="fas fa-brain"></i>Machine Learning</div>
+                    <div class="skill-item"><i class="fas fa-chart-bar"></i>Data Visualization</div>
+                    <div class="skill-item"><i class="fas fa-server"></i>Big Data</div>
+                </div>
+                <div class="skills-scroll" aria-hidden="true">
+                    <div class="skill-item"><i class="fab fa-python"></i>Python</div>
+                    <div class="skill-item"><i class="fab fa-r-project"></i>R</div>
+                    <div class="skill-item"><i class="fab fa-java"></i>Java</div>
+                    <div class="skill-item"><i class="fab fa-js-square"></i>JavaScript</div>
+                    <div class="skill-item"><i class="fas fa-database"></i>SQL</div>
+                    <div class="skill-item"><i class="fab fa-docker"></i>Docker</div>
+                    <div class="skill-item"><i class="fab fa-node-js"></i>Node.js</div>
+                    <div class="skill-item"><i class="fas fa-brain"></i>Machine Learning</div>
+                    <div class="skill-item"><i class="fas fa-chart-bar"></i>Data Visualization</div>
+                    <div class="skill-item"><i class="fas fa-server"></i>Big Data</div>
+                </div>
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Data Engineering</h3>
+                    <ul class="skills-list">
+                        <li><span class="emoji">📊</span> <span class="keyword">Collecte de données</span> (SQL, API, Python)</li>
+                        <li><span class="emoji">🔄</span> <span class="keyword">Transformation de données</span> (ETL)</li>
+                        <li><span class="emoji">💾</span> Bases de données relationnelles et NoSQL</li>
+                        <li><span class="emoji">📈</span> Visualisation de données (Tableau, Power BI)</li>
+                        <li><span class="emoji">🧮</span> Analyse de données (pandas, NumPy, scikit-learn)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Machine Learning & Big Data</h3>
+                    <ul class="skills-list">
+                        <li><span class="emoji">🤖</span> Classification supervisée et non supervisée</li>
+                        <li><span class="emoji">📉</span> Régression et méthodes ensemblistes</li>
+                        <li><span class="emoji">🧠</span> <span class="keyword">Deep Learning</span>, LLM et RAG</li>
+                        <li><span class="emoji">🗣️</span> NLP et réduction de dimension</li>
+                        <li><span class="emoji">⚡</span> Spark (PySpark) et Hadoop</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Développement</h3>
+                    <ul class="skills-list">
+                        <li><span class="emoji">🐍</span> Python, R, Java, C++</li>
+                        <li><span class="emoji">🌐</span> Web: Flask, Node.js, ReactJS</li>
+                        <li><span class="emoji">📱</span> Mobile: Kotlin</li>
+                        <li><span class="emoji">🛠️</span> DevOps: Docker, Git</li>
+                        <li><span class="emoji">📊</span> Data Viz: Matplotlib, Seaborn</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2>Expérience Professionnelle</h2>
+            <div class="timeline">
+                <div class="timeline-item card">
+                    <h3>COGNIWAVE DYNAMICS, Paris/Luxembourg - <span class="keyword">Ingénieur Data Science</span></h3>
+                    <p><strong>📅 Septembre 2023 - Présent (CDI)</strong></p>
+                    <ul class="experience-list">
+                        <li>Développement et amélioration continue d'une <span class="keyword">plateforme SaaS</span> d'analyse de documents utilisant des <span class="keyword">LLM</span> tels que Llama 2, Llama 3 et Mistral.</li>
+                        <li>Intégration de <span class="keyword">Langchain</span> pour orchestrer efficacement les interactions avec les LLM, optimisant la génération de réponses et la manipulation de données complexes.</li>
+                        <li>Mise en place d'un système de stockage vectoriel performant avec <span class="keyword">ChromaDB</span> et <span class="keyword">FAISS</span>, améliorant la pertinence des recherches sémantiques de 40%.</li>
+                        <li>Optimisation des performances de traitement avec <span class="keyword">VLLM</span>, réduisant les temps de latence de 35% et augmentant la capacité de traitement parallèle.</li>
+                        <li>Développement d'une API RESTful avec <span class="keyword">Flask</span> pour faciliter l'intégration de la plateforme avec divers systèmes clients.</li>
+                        <li>Mise en œuvre d'une stratégie de déploiement continu basée sur <span class="keyword">Docker</span>, améliorant la portabilité et la scalabilité dans différents environnements cloud.</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item card">
+                    <h3>COGNIWAVE DYNAMICS, Paris/Luxembourg - <span class="keyword">Consultant Data (NLP / Python)</span></h3>
+                    <p><strong>📅 Octobre 2022 - Septembre 2023 (Alternance)</strong></p>
+                    <ul class="experience-list">
+                        <li>Conception et implémentation d'un système avancé de classification automatique des CV et matching poste-profil, augmentant la précision du matching de 35%.</li>
+                        <li>Développement d'algorithmes de <span class="keyword">text mining</span> et d'analyse sémantique, réduisant le temps de traitement des CV et offres d'emploi de 60%.</li>
+                        <li>Création d'un chatbot d'analyse de CV avec <span class="keyword">RAG</span> et <span class="keyword">Llama 2</span>, augmentant l'efficacité du recrutement de 25%.</li>
+                        <li>Mise en place d'une architecture microservices avec <span class="keyword">Docker</span>, améliorant la scalabilité et la résilience de l'application.</li>
+                        <li>Utilisation de <span class="keyword">MongoDB</span> pour le stockage flexible des données non structurées, optimisant les temps de réponse pour les recherches avancées de 50%.</li>
+                        <li>Configuration et optimisation de serveurs <span class="keyword">Nginx</span>, supportant efficacement une charge de 10 000 utilisateurs simultanés.</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item card">
+                    <h3>Wanasis Solutions, Constantine - <span class="keyword">Développeur Frontend</span> (Stage)</h3>
+                    <p><strong>📅 Juin 2020 - Septembre 2020</strong></p>
+                    <ul class="experience-list">
+                        <li>Conception et développement d'interfaces utilisateur intuitives pour des systèmes complexes de gestion de règles métier, améliorant l'expérience utilisateur et réduisant le temps de formation des nouveaux utilisateurs de 40%.</li>
+                        <li>Mise en place de tests automatisés d'interface utilisateur, augmentant la couverture de tests de 70% à 95% et réduisant le temps de détection des régressions de 60%.</li>
+                        <li>Optimisation des performances front-end, avec une amélioration de 30% du temps de chargement des pages et une réduction de 25% de la consommation des ressources côté client.</li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projets Significatifs</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>SeekJobs</h3>
+                    <div class="card-content">
+                        <p>Système de recommandation pour la recherche et l'offre d'emploi</p>
+                        <ul class="project-list">
+                            <li>Utilisation du <span class="keyword">NLP</span> pour l'analyse des CV</li>
+                            <li>Développement avec <span class="keyword">Python</span> et <span class="keyword">Django</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>AutolibDZ</h3>
+                    <div class="card-content">
+                        <p>Système de gestion de location de véhicules en libre-service</p>
+                        <ul class="project-list">
+                            <li>Application mobile avec <span class="keyword">Kotlin</span></li>
+                            <li>Backend <span class="keyword">Node.js</span> et frontend <span class="keyword">React.js</span></li>
+                            <li>Base de données <span class="keyword">PostgreSQL</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Medico</h3>
+                    <div class="card-content">
+                        <p>Application mobile de prise de rendez-vous médicaux</p>
+                        <ul class="project-list">
+                            <li>Développement Android avec <span class="keyword">Kotlin</span></li>
+                            <li>Backend <span class="keyword">Node.js</span></li>
+                            <li>Base de données <span class="keyword">PostgreSQL</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2>Formation</h2>
+            <div class="timeline">
+                <div class="timeline-item card">
+                    <h3>Master 2 Machine Learning pour la Science des Données</h3>
+                    <p><strong>📅 Université Paris Cité, 2022-2023</strong></p>
+                    <ul class="experience-list">
+                        <li>Apprentissage non supervisé et supervisé</li>
+                        <li>Deep learning</li>
+                        <li>Big Data Analytics</li>
+                        <li>Text-mining et NLP</li>
+                        <li>Data engineering</li>
+                    </ul>
+                </div>
+                <div class="timeline-item card">
+                    <h3>Master 1 Données : Algorithme, Traitement et Analyse</h3>
+                    <p><strong>📅 Université Paris Cité, 2021-2022</strong></p>
+                    <ul class="experience-list">
+                        <li>Intelligence artificielle et théorie des jeux</li>
+                        <li>Technologies big data</li>
+                        <li>Algorithmique avancée</li>
+                    </ul>
+                </div>
+                <div class="timeline-item card">
+                    <h3>Ingénieur en Informatique</h3>
+                    <p><strong>📅 École Nationale Supérieure d'Informatique Alger, 2017-2021</strong></p>
+                    <ul class="experience-list">
+                        <li>Système d'information</li>
+                        <li>Analyse et fouille de données</li>
+                        <li>Génie logiciel et méthodologies agiles</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="languages" class="languages-section">
+        <div class="container">
+            <h2>Langues</h2>
+            <div class="contact-card">
+                <div class="languages-item">
+                    <i class="fas fa-language"></i>
+                    <p>🇫🇷 Français (Bilingue)</p>
+                </div>
+                <div class="languages-item">
+                    <i class="fas fa-language"></i>
+                    <p>🇬🇧 Anglais (Professionnel)</p>
+                </div>
+                <div class="languages-item">
+                    <i class="fas fa-language"></i>
+                    <p>🇩🇿 Arabe (Maternel)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="contact-card">
+                <div class="contact-info">
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>0752026089</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Île-de-France</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>boucherir.mohamed.zineddine@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    
+
+    <footer>
+        <p>&copy; 2024 Boucherir Mohamed Zineddine. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fade-in animation for cards and timeline items
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.card, .timeline-item').forEach((item) => {
+            observer.observe(item);
+        });
+       // Configuration de l'animation
+const canvas = document.getElementById('animation-canvas');
+const ctx = canvas.getContext('2d');
+let particlesArray;
+
+// Couleurs ajustées pour plus de visibilité
+const connectionColor = 'rgba(52, 152, 219, 0.4)'; // Bleu plus opaque
+const nodeColor = 'rgba(52, 152, 219, 0.8)'; // Nœuds plus visibles
+
+// Redimensionnement du canvas
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+// Classe Particle ajustée
+class Particle {
+    constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 3 + 2; // Taille augmentée
+        this.speedX = Math.random() * 1 - 0.5; // Vitesse légèrement augmentée
+        this.speedY = Math.random() * 1 - 0.5;
+    }
+    update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if (this.x > canvas.width) this.x = 0;
+        else if (this.x < 0) this.x = canvas.width;
+        if (this.y > canvas.height) this.y = 0;
+        else if (this.y < 0) this.y = canvas.height;
+    }
+    draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = nodeColor;
+        ctx.fill();
+    }
+}
+
+// Création des particules
+function init() {
+    particlesArray = [];
+    const numberOfParticles = (canvas.width * canvas.height) / 8000; // Densité augmentée
+    for (let i = 0; i < numberOfParticles; i++) {
+        particlesArray.push(new Particle());
+    }
+}
+
+// Animation et connexion des particules
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].draw();
+    }
+    connect();
+    requestAnimationFrame(animate);
+}
+
+// Connexion des particules proches
+function connect() {
+    for (let a = 0; a < particlesArray.length; a++) {
+        for (let b = a; b < particlesArray.length; b++) {
+            let distance = Math.sqrt(
+                (particlesArray[a].x - particlesArray[b].x) ** 2 +
+                (particlesArray[a].y - particlesArray[b].y) ** 2
+            );
+            if (distance < 150) { // Distance de connexion augmentée
+                ctx.strokeStyle = connectionColor;
+                ctx.lineWidth = 1; // Ligne légèrement plus épaisse
+                ctx.beginPath();
+                ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                ctx.stroke();
+            }
+        }
+    }
+}
+
+// Initialisation et démarrage de l'animation
+init();
+animate();
+    </script>
+</body>
+</html>
